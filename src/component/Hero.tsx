@@ -1,7 +1,8 @@
-import React from 'react'
+
 import styled from "@emotion/styled"
-import {Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Navigation,Autoplay } from 'swiper/modules'
+import { Navigation } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Pagination, Autoplay } from "swiper/modules";
 
 import bg1 from "../assets/sli1.jpg"
 import bg2 from "../assets/sli2.png"
@@ -22,38 +23,34 @@ color: white;
 const SwippingSlide = styled(SwiperSlide)<{bg: string}>`
 height: 500px;
 width: 100%;
-
-
-
-background-image: url(${(props) => props.bg})
+background-image: url(${(props) => props.bg});
 background-position: center;
 background-size: cover;
-backgroung-repeat: no-repeat;
+background-repeat: no-repeat;
 position: relative;
 
 `
 
-const TransparentBackground = styled.div`
+const TransParentBackground = styled.div`
 background: linear-gradient(
+  90deg,
+  rgba(0,0,0,0.964) 31%,
+  rgba(26, 26, 25, 0.2049194677871149) 100%,
+  rgba(255, 255, 255, 0) 100%
+);
 
-90deg,
-rgba(0, 0, 0, 0.9640231092436975) 31%,
-rgba(26, 26, 25, 0.2049194677871149) 100%,
-rgba(255, 255, 255, 0) 100%
-
-)
 position: absolute;
 top: 0;
 bottom: 0;
 left: 0;
 right: 0;
-padding-left: 50px;
+padding-top: 60px;
 
 `
 
 const TypeHead = styled.div`
-font-size: 20px;
-margin-top: 100px;
+font-size: 60px;
+margin-top: 50px;
 font-weight: 500;
 `
 const Title = styled.div`
@@ -78,90 +75,86 @@ border: none;
 outline: none;
 margin-right: 15px;
 border-radius: 5px;
+cursor: pointer;
+:hover {
+  background-color: transparent;
+}
 `
 
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return ( 
     <>
    <Container 
    spaceBetween= {30}
-   centeredSlide = {true}
+   centeredSlides={true}
    autoplay = {{delay: 2500,
-              disableOnInterraction: false,
-}} // navigation = {true}
+              disableOnInteraction: false,
+}}  navigation = {true}
               modules={[Pagination, Navigation, Autoplay]}
               className = 'mySwipper'>
               <SwippingSlide bg = {bg1}>
-              <TransparentBackground>
+              <TransParentBackground>
               <TypeHead> TRAVIS'S MOVIE BOX </TypeHead>
               <Title>LATEST 2023 MOVIES</Title>
               <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam consectetur
                deleniti quos natus quod eius error sequi dolore dignissimos ea expedita qui,
                voluptatum corrupti ipsum quibusdam accusantium reprehenderit dolor cum?
                </P>
-               <Button cl='white' bgg = '#0b397a'>
-               Watch Movies
-               
-               </Button>
+               <Button bgg="#477890" cl='white'>Get Started</Button>
+                <Button bgg="#e1dd8f" cl='white'>Movies</Button>
 
             
               
-              </TransparentBackground>
+              </TransParentBackground>
               </SwippingSlide>
 
               <SwippingSlide bg = {bg2}>
-              <TransparentBackground>
+              <TransParentBackground>
               <TypeHead> TRAVIS'S MOVIE BOX </TypeHead>
               <Title>LATEST 2023 MOVIES</Title>
               <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam consectetur
                deleniti quos natus quod eius error sequi dolore dignissimos ea expedita qui,
                voluptatum corrupti ipsum quibusdam accusantium reprehenderit dolor cum?
                </P>
-               <Button cl='white' bgg = '#0b397a'>
-               Watch Movies
-               
-               </Button>
+               <Button bgg="#477890" cl='white'>Get Started</Button>
+                <Button bgg="#e1dd8f" cl='white'>Movies</Button>
 
             
               
-              </TransparentBackground>
+              </TransParentBackground>
               </SwippingSlide>
 
               <SwippingSlide bg = {bg3}>
-              <TransparentBackground>
+              <TransParentBackground>
               <TypeHead> TRAVIS'S MOVIE BOX </TypeHead>
               <Title>LATEST 2023 MOVIES</Title>
               <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam consectetur
                deleniti quos natus quod eius error sequi dolore dignissimos ea expedita qui,
                voluptatum corrupti ipsum quibusdam accusantium reprehenderit dolor cum?
                </P>
-               <Button cl='white' bgg = '#0b397a'>
-               Watch Movies
-               
-               </Button>
+               <Button bgg="#477890" cl='white'>Get Started</Button>
+                <Button bgg="#e1dd8f" cl='white'>Movies</Button>
 
             
               
-              </TransparentBackground>
+              </TransParentBackground>
               </SwippingSlide>
+
               <SwippingSlide bg = {bg4}>
-                {" "}
-              <TransparentBackground>
+              <TransParentBackground>
               <TypeHead> TRAVIS'S MOVIE BOX </TypeHead>
               <Title>LATEST 2023 MOVIES</Title>
               <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam consectetur
                deleniti quos natus quod eius error sequi dolore dignissimos ea expedita qui,
                voluptatum corrupti ipsum quibusdam accusantium reprehenderit dolor cum?
                </P>
-               <Button cl='white' bgg = '#0b397a'>
-               Watch Movies
-               
-               </Button>
+               <Button bgg="#477890" cl='white'>Get Started</Button>
+                <Button bgg="#e1dd8f" cl='white'>Movies</Button>
 
             
               
-              </TransparentBackground>
+              </TransParentBackground>
               </SwippingSlide>
    
    

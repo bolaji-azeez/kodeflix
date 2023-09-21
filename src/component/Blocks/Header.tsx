@@ -2,60 +2,101 @@ import React from 'react'
 import styled  from '@emotion/styled'
 import {VscSearch} from "react-icons/vsc"
 import {LuUserCircle2} from "react-icons/lu"
+// import movieData from "../../Pages/MovieData.json"
 
-const Container =styled.div`
-height: 50px;
-background-color: black;
-position: fixed;
-top: 0;
-right: 0;
-left: 0;
-bottom: 0;
-display: flex;
-align-items: center;
-justify-content: space-between;
-color: white;
-padding: 20px;
-`
-const Logo = styled.div``
-const Input = styled.div`
-height: 40px;
-width: 220px;
-background-color: white;
-border: 0px;
-border-radius: 3px;
-display: flex;
-align-items: center;
-gap: 10px;
-color: black;
-padding-left: 10px;
-`
 
-const InHold = styled.div`
-display: flex;
-align-items: center;
-gap: 20px;
-`
+
+const Container = styled.div`
+	height: 70px;
+	width: 100%;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+	overflow: hidden;
+`;
+
+const Logo = styled.div`
+	margin-left: 40px;
+	font-size: 30px;
+	font-weight: bolder;
+`;
+const Second = styled.div`
+	margin-right: 40px;
+	display: flex;
+	color: white;
+	align-items: center;
+`;
+
+const Input = styled.input`
+	background-color: transparent;
+	flex: 1;
+	outline: none;
+	border: none;
+	height: 100%;
+	overflow: hidden;
+`;
+
+const InputHold = styled.div`
+	width: 70px;
+	height: 20px;
+	background-color: white;
+	border: 1px solid white;
+	display: flex;
+	align-items: center;
+	color: black;
+	padding: 10px;
+	border-radius: 5px;
+	transition: all 300ms;
+	margin-right: 20px;
+
+	:hover {
+		width: 300px;
+	}
+`;
+const IconSearch = styled.div`
+	font-size: 20px;
+`;
+
+const UserHold = styled.div`
+	font-size: 20px;
+`;
 
 const Header = () => {
-  return (
-   <Container>
+	// const SearchAlg = (movie) => {
+	// const LowerCaseValue = movie?.plot?.toLowerCase();
+	//
+	// if (LowerCaseValue?.includes("fight")) {
+	// return true;
+	// }
+	// return false;
+	// };
+	//
+	// for (const movie of movieData) {
+	// if (SearchAlg(movie)) {
+	// console.log("movie founds", movie.title);
+	// } else {
+	// console.log("");
+	// }
+	// }
 
-    <Logo>
-        <h1>KODEFLIX</h1>
-    </Logo>
-
-    <InHold>
-    <Input>
-    <VscSearch />
-    <input type="text" placeholder='Search'/>
-    
-    </Input>
-    <LuUserCircle2/>
-    </InHold>
-    
-   </Container>
-  )
-}
+	return (
+		<Container>
+			<Logo>K10XMOVIES</Logo>
+			<Second>
+				<InputHold>
+					<IconSearch>
+						<VscSearch />
+					</IconSearch>
+					<Input placeholder='Search...' />
+				</InputHold>
+				<UserHold>
+					<LuUserCircle2 />
+				</UserHold>
+			</Second>
+		</Container>
+	);
+};
 
 export default Header
